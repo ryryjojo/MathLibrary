@@ -56,5 +56,11 @@ namespace MathLibrary
 
 			return result;
 		}
+
+		// f = V.Magnitude
+		public float Magnitude()
+		{
+			return (float)Math.Sqrt((x * x) + (y * y));
+		}
 	}
 }
