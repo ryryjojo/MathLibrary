@@ -83,5 +83,19 @@ namespace MathLibrary
 				z /= magnitude;
 			}
 		}
+
+		public float Dot(Vector3 rhs)
+		{
+			return (x * rhs.x) + (y * rhs.y) + (z + rhs.z);
+		}
+
+		public Vector3 Cross(Vector3 rhs)
+		{
+			result.x = (y * rhs.z) - (z * rhs.y);
+			result.y = (z * rhs.x) - (x * rhs.z);
+			result.z = (x * rhs.y) - (y * rhs.x);
+
+			return result;
+		}
 	}
 }

@@ -62,5 +62,7 @@ namespace MathLibrary
 		{
 			return (float)Math.Sqrt((x * x) + (y * y));
 		}
+
+
 	}
 }
