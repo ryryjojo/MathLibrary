@@ -62,5 +62,13 @@ namespace MathLibrary
 
 			return result;
 		}
+
+		public void SetRotateX(float fRandians)
+		{
+			m[4] = (float)Math.Cos(fRandians);
+			m[5] = (float)-Math.Sin(fRandians);
+			m[7] = (float)Math.Sin(fRandians);
+			m[8] = (float)Math.Cos(fRandians);
+		}
 	}
 }
