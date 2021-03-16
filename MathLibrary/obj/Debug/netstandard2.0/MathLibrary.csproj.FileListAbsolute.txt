@@ -5,3 +5,4 @@ C:\Users\S210544\Desktop\MathLibrary\MathLibrary\obj\Debug\netstandard2.0\MathLi
 C:\Users\S210544\Desktop\MathLibrary\MathLibrary\obj\Debug\netstandard2.0\MathLibrary.AssemblyInfo.cs
 C:\Users\S210544\Desktop\MathLibrary\MathLibrary\obj\Debug\netstandard2.0\MathLibrary.dll
 C:\Users\S210544\Desktop\MathLibrary\MathLibrary\obj\Debug\netstandard2.0\MathLibrary.pdb
+C:\Users\S210544\Desktop\MathLibrary\MathLibrary\obj\Debug\netstandard2.0\MathLibrary.csprojAssemblyReference.cache

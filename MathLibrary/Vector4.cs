@@ -12,7 +12,7 @@ namespace MathLibrary
 		public float w;
 
 		// Constructors
-		public Vector4(float x = 0.0f, float y = 0.0f, float z = 0.0f, float w = 0.0f)
+		public Vector4(float x = 0.0f, float y = 0.0f, float z = 0.0f, float w = 1.0f)
 		{
 			this.x = x;
 			this.y = y;
@@ -76,7 +76,7 @@ namespace MathLibrary
 		// f = V.Magnitude
 		public float Magnitude()
 		{
-			return (float)Math.Sqrt((x * x) + (y * y) + (z * z) + (w * w);
+			return (float)Math.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
 		}
 
 		// normalise
@@ -99,6 +99,8 @@ namespace MathLibrary
 
 		public Vector4 Cross(Vector4 rhs)
 		{
+			Vector4 result;
+			
 			result.x = (y * rhs.z) - (z * rhs.y);
 			result.y = (z * rhs.x) - (x * rhs.z);
 			result.z = (x * rhs.y) - (y * rhs.x);
