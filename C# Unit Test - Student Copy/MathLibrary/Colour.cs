@@ -4,9 +4,13 @@ using System.Text;
 
 namespace MathLibrary
 {
-	class Colour
+	public class Colour
 	{
-		private uint colour = 0;
+		public uint colour = 0;
+
+		public Colour()
+		{
+		}
 
 		public Colour(byte red, byte green, byte blue, byte alpha)
 		{
@@ -17,6 +21,24 @@ namespace MathLibrary
 		{
 			colour = colour & 0x00FFFFFF;
 			colour = colour | (uint)(red << 24);
+		}
+
+		public void SetGreen(byte green)
+		{
+			colour = colour & 0xFF00FFFF;
+			colour = colour | (uint)(green << 16);
+		}
+
+		public void SetBlue(byte blue)
+		{
+			colour = colour & 0xFFFF00FF;
+			colour = colour | (uint)(blue << 8);
+		}
+
+		public void SetAlpha(byte alpha)
+		{
+			colour = colour & 0xFFFFFF00;
+			colour = colour | (uint)alpha;
 		}
 
 		public byte GetRed()
@@ -31,7 +53,12 @@ namespace MathLibrary
 
 		public byte GetBlue()
 		{
-			return (byte)(((colour >> 8) << 16) >> 24);
+			return (byte)((colour << 16) >> 24);
+		}
+
+		public byte GetAlpha()
+		{
+			return (byte)((colour << 24) >> 24);
 		}
 	}
 }

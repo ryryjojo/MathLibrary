@@ -4,44 +4,53 @@ using System.Text;
 
 namespace MathLibrary
 {
-	struct Matrix3
+	public struct Matrix3
 	{
-		public float[] m;
+		//public float[] m;
+		public float m1;
+		public float m2;
+		public float m3;
+		public float m4;
+		public float m5;
+		public float m6;
+		public float m7;
+		public float m8;
+		public float m9;
 
 		public Matrix3(bool bDefault = true)
 		{
-			m = new float[9];
-			m[0] = 1;
-			m[1] = 0;
-			m[2] = 0;
-			m[3] = 0;
-			m[4] = 1;
-			m[5] = 0;
-			m[6] = 0;
-			m[7] = 0;
-			m[8] = 1;
+			//m = new float[9];
+			m1 = 1;
+			m2 = 0;
+			m3 = 0;
+			m4 = 0;
+			m5 = 1;
+			m6 = 0;
+			m7 = 0;
+			m8 = 0;
+			m9 = 1;
 		}
 
-		public Matrix3(float m0, float m1, float m2, float m3, float m4, float m5, float m6, float m7, float m8)
+		public Matrix3(float m00, float m01, float m02, float m03, float m04, float m05, float m06, float m07, float m08)
 		{
-			m = new float[9];
-			m[0] = m0;
-			m[1] = m1;
-			m[2] = m2;
-			m[3] = m3;
-			m[4] = m4;
-			m[5] = m5;
-			m[6] = m6;
-			m[7] = m7;
-			m[8] = m8;
+			//m = new float[9];
+			m1 = m00;
+			m2 = m01;
+			m3 = m02;
+			m4 = m03;
+			m5 = m04;
+			m6 = m05;
+			m7 = m06;
+			m8 = m07;
+			m9 = m08;
 		}
 
 		public static Vector3 operator*(Matrix3 lhs, Vector3 rhs)
 		{
 			Vector3 result;
-			result.x = (lhs.m[0] * rhs.x) + (lhs.m[3] * rhs.y) + (lhs.m[6] * rhs.z);
-			result.y = (lhs.m[1] * rhs.x) + (lhs.m[4] * rhs.y) + (lhs.m[7] * rhs.z);
-			result.z = (lhs.m[2] * rhs.x) + (lhs.m[5] * rhs.y) + (lhs.m[8] * rhs.z);
+			result.x = (lhs.m1 * rhs.x) + (lhs.m4 * rhs.y) + (lhs.m7 * rhs.z);
+			result.y = (lhs.m2 * rhs.x) + (lhs.m5 * rhs.y) + (lhs.m8 * rhs.z);
+			result.z = (lhs.m3 * rhs.x) + (lhs.m6 * rhs.y) + (lhs.m9 * rhs.z);
 
 			return result;
 		}
@@ -50,41 +59,41 @@ namespace MathLibrary
 		{
 			Matrix3 result = new Matrix3();
 
-			result.m[0] = (lhs.m[0] * rhs.m[0]) + (lhs.m[3] * rhs.m[1]) + (lhs.m[6] * rhs.m[2]);
-			result.m[1] = (lhs.m[1] * rhs.m[0]) + (lhs.m[4] * rhs.m[1]) + (lhs.m[7] * rhs.m[2]);
-			result.m[2] = (lhs.m[2] * rhs.m[0]) + (lhs.m[5] * rhs.m[1]) + (lhs.m[8] * rhs.m[2]);
-			result.m[3] = (lhs.m[0] * rhs.m[3]) + (lhs.m[3] * rhs.m[4]) + (lhs.m[6] * rhs.m[5]);
-			result.m[4] = (lhs.m[1] * rhs.m[3]) + (lhs.m[4] * rhs.m[4]) + (lhs.m[7] * rhs.m[5]);
-			result.m[5] = (lhs.m[2] * rhs.m[3]) + (lhs.m[5] * rhs.m[4]) + (lhs.m[8] * rhs.m[5]);
-			result.m[6] = (lhs.m[0] * rhs.m[6]) + (lhs.m[3] * rhs.m[7]) + (lhs.m[6] * rhs.m[8]);
-			result.m[7] = (lhs.m[1] * rhs.m[6]) + (lhs.m[4] * rhs.m[7]) + (lhs.m[7] * rhs.m[8]);
-			result.m[8] = (lhs.m[2] * rhs.m[6]) + (lhs.m[5] * rhs.m[7]) + (lhs.m[8] * rhs.m[8]);
+			result.m1 = (lhs.m1 * rhs.m1) + (lhs.m4 * rhs.m2) + (lhs.m7 * rhs.m3);
+			result.m2 = (lhs.m2 * rhs.m1) + (lhs.m5 * rhs.m2) + (lhs.m8 * rhs.m3);
+			result.m3 = (lhs.m3 * rhs.m1) + (lhs.m6 * rhs.m2) + (lhs.m9 * rhs.m3);
+			result.m4 = (lhs.m1 * rhs.m4) + (lhs.m4 * rhs.m5) + (lhs.m7 * rhs.m6);
+			result.m5 = (lhs.m2 * rhs.m4) + (lhs.m5 * rhs.m5) + (lhs.m8 * rhs.m6);
+			result.m6 = (lhs.m3 * rhs.m4) + (lhs.m6 * rhs.m5) + (lhs.m9 * rhs.m6);
+			result.m7 = (lhs.m1 * rhs.m7) + (lhs.m4 * rhs.m8) + (lhs.m7 * rhs.m9);
+			result.m8 = (lhs.m2 * rhs.m7) + (lhs.m5 * rhs.m8) + (lhs.m8 * rhs.m9);
+			result.m9 = (lhs.m3 * rhs.m7) + (lhs.m6 * rhs.m8) + (lhs.m9 * rhs.m9);
 
 			return result;
 		}
 
 		public void SetRotateX(float fRadians)
 		{
-			m[4] = (float)Math.Cos(fRadians);
-			m[5] = (float)-Math.Sin(fRadians);
-			m[7] = (float)Math.Sin(fRadians);
-			m[8] = (float)Math.Cos(fRadians);
+			m5 = (float)Math.Cos(fRadians);
+			m6 = (float)Math.Sin(fRadians);
+			m8 = (float)-Math.Sin(fRadians);
+			m9 = (float)Math.Cos(fRadians);
 		}
 
 		public void SetRotateY(float fRadians)
 		{
-			m[0] = (float)Math.Cos(fRadians);
-			m[2] = (float)Math.Sin(fRadians);
-			m[6] = (float)-Math.Sin(fRadians);
-			m[8] = (float)Math.Cos(fRadians);
+			m1 = (float)Math.Cos(fRadians);
+			m3 = (float)-Math.Sin(fRadians);
+			m7 = (float)Math.Sin(fRadians);
+			m9 = (float)Math.Cos(fRadians);
 		}
 
 		public void SetRotateZ(float fRadians)
 		{
-			m[0] = (float)Math.Cos(fRadians);
-			m[1] = (float)-Math.Sin(fRadians);
-			m[3] = (float)Math.Sin(fRadians);
-			m[4] = (float)Math.Cos(fRadians);
+			m1 = (float)Math.Cos(fRadians);
+			m2 = (float)Math.Sin(fRadians);
+			m4 = (float)-Math.Sin(fRadians);
+			m5 = (float)Math.Cos(fRadians);
 		}
 	}
 }

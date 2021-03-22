@@ -53,12 +53,12 @@ namespace MathLibrary
 
 		public byte GetBlue()
 		{
-			return (byte)(((colour >> 8) << 16) >> 24);
+			return (byte)((colour << 16) >> 24);
 		}
 
 		public byte GetAlpha()
 		{
-			return (byte)((((colour << 2)>> 8) << 16) >> 24);
+			return (byte)((colour << 24) >> 24);
 		}
 	}
 }

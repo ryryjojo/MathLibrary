@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MathLibrary
 {
-	struct Vector4
+	public struct Vector4
 	{
 		public float x;
 		public float y;
@@ -36,7 +36,7 @@ namespace MathLibrary
 		}
 
 		// V = V - V
-		public static Vector4 operator -(Vector4 rhs, Vector4 lhs)
+		public static Vector4 operator -(Vector4 lhs, Vector4 rhs)
 		{
 			Vector4 result;
 			result.x = lhs.x - rhs.x;
@@ -94,7 +94,7 @@ namespace MathLibrary
 
 		public float Dot(Vector4 rhs)
 		{
-			return (x * rhs.x) + (y * rhs.y) + (z + rhs.z) + (w + rhs.w);
+			return (x * rhs.x) + (y * rhs.y) + (z * rhs.z) + (w * rhs.w);
 		}
 
 		public Vector4 Cross(Vector4 rhs)
