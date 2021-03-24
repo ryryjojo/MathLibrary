@@ -63,6 +63,19 @@ namespace MathLibrary
 			return (float)Math.Sqrt((x * x) + (y * y));
 		}
 
+		public void Normalise()
+		{
+			float magnitude = Magnitude();
+			if (magnitude != 0)
+			{
+				x /= magnitude;
+				y /= magnitude;
+			}
+		}
 
+		public float Dot(Vector2 rhs)
+		{
+			return (x * rhs.x) + (y * rhs.y);
+		}
 	}
 }
