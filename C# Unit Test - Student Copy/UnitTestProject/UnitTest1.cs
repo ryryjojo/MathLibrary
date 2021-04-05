@@ -551,5 +551,15 @@ namespace UnitTestProject
 
             Assert.AreEqual<UInt32>(c.colour, 0x00000078);
         }
-    }
+
+		[TestMethod]
+		public void ColourTestFunction()
+		{
+			Colour c = new Colour(0x94, 0x00, 0x00, 0x00);
+
+			c.SetGreen(c.GetRed());
+
+			Assert.AreEqual<byte>(c.GetGreen(), 0x94);
+		}
+	}
 }
